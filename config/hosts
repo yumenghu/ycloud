@@ -1,0 +1,7 @@
+127.0.0.1 api.gateway.com #外网网关ip
+127.0.0.1 local.gateway.com #内网网关ip
+127.0.0.1 local.register.com #注册中心ip
+127.0.0.1 local.monitor.com #监控中心ip
+127.0.0.1 local.mysql.com #数据库ip
+127.0.0.1 local.redis.com #redis ip
+127.0.0.1 local.rabbitmq.com #rabbitmq ip
