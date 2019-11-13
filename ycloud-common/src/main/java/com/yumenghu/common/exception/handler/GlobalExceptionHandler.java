@@ -1,7 +1,7 @@
 package com.yumenghu.common.exception.handler;
 
 import com.yumenghu.common.exception.YcloudException;
-import com.yumenghu.common.log.domain.CommonResult;
+import com.yumenghu.common.domain.CommonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

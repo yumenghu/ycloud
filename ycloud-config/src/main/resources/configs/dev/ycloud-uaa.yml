@@ -1,11 +1,11 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://local.mysql.com:3306/ycloud01_user?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=GMT%2B8
+    url: jdbc:mysql://ycloud.mysql.com:3306/ycloud_user?useSSL=false&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=GMT%2B8
     username: root
-    password: root
+    password: 123456
   rabbitmq:
-    host: local.rabbitmq.com
+    host: ycloud.rabbitmq.com
     port: 5672
     username: guest
     password: guest
@@ -31,6 +31,6 @@ management:
       show-details: ALWAYS
 logging:
   level:
-    root: info
+    root: debug
     com.yumenghu: debug
   file: logs/${spring.application.name}.log

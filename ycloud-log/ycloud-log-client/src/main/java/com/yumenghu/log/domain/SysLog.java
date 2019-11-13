@@ -1,4 +1,4 @@
-package com.yumenghu.common.log.domain;
+package com.yumenghu.log.domain;
 
 import java.util.Date;
 import lombok.Data;
@@ -17,7 +17,7 @@ public class SysLog {
   /**
    * 事务ID
    */
-  private Long id;
+  private String id;
   /**
    * 用户名
    */

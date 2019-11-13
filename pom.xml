@@ -18,7 +18,6 @@
     <module>ycloud-gateway</module>
     <module>ycloud-moitor</module>
     <module>ycloud-models</module>
-    <module>ycloud-domain</module>
   </modules>
 
 

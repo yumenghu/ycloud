@@ -1,4 +1,4 @@
-package com.yumenghu.common.log.annotation;
+package com.yumenghu.log.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

@@ -1,4 +1,4 @@
-package com.yumenghu.uaa.config;
+package com.yumenghu.log.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;

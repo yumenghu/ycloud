@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yumenghu.log.dao.SysLogDao">
+
+  <select id="count" parameterType="SysLogDTO" resultType="Integer">
+    select count(*) from sys_log
+    <where>
+      <include refid="sys_log_sql_fragment"></include>
+    </where>
+  </select>
+
+  <select id="findData" parameterType="SysLogDTO" resultType="SysLog">
+    select * from sys_log
+    <where>
+      <include refid="sys_log_sql_fragment"></include>
+    </where>
+  </select>
+  <sql id="sys_log_sql_fragment">
+    <if test="username != null and username != ''">
+      <bind name="usernameLike" value=" '%' + username + '%' "/>
+      and username like #{usernameLike}
+    </if>
+
+    <if test="operation != null and operation != ''">
+      and operation = #{operation}
+    </if>
+
+    <if test="params != null and params != ''">
+      <bind name="paramsLike" value=" '%' + params + '%' "/>
+      and params like #{paramsLike}
+    </if>
+    <if test="startDate != null and startDate != ''">
+      and operation &gt;= #{startDate}
+    </if>
+
+    <if test="endDate != null and endDate != ''">
+      and operation &lt;= #{endDate}
+    </if>
+
+  </sql>
+
+</mapper>

@@ -44,24 +44,17 @@
       <artifactId>spring-cloud-starter-openfeign</artifactId>
     </dependency>
 
-    <!-- mq -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-amqp</artifactId>
-    </dependency>
-
     <!-- 工程依赖 -->
-    <dependency>
-      <groupId>com.yumenghu</groupId>
-      <artifactId>ycloud-domain</artifactId>
-      <version>${parent.version}</version>
-    </dependency>
     <dependency>
       <groupId>com.yumenghu</groupId>
       <artifactId>ycloud-common</artifactId>
       <version>${parent.version}</version>
     </dependency>
-
+    <dependency>
+      <groupId>com.yumenghu</groupId>
+      <artifactId>ycloud-log-client</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
   </dependencies>
 
   <build>

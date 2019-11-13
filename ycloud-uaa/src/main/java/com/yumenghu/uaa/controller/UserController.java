@@ -1,8 +1,8 @@
 package com.yumenghu.uaa.controller;
 
-import com.yumenghu.common.log.annotation.SysLogger;
-import com.yumenghu.common.log.domain.CommonResult;
-import com.yumenghu.uaa.config.RabbitConfig;
+import com.yumenghu.log.annotation.SysLogger;
+import com.yumenghu.common.domain.CommonResult;
+import com.yumenghu.log.config.RabbitConfig;
 import com.yumenghu.uaa.domain.UserVO;
 import io.swagger.annotations.ApiOperation;
 import javax.validation.Valid;
@@ -47,7 +47,7 @@ public class UserController {
     rabbitTemplate.convertAndSend(RabbitConfig.queueName, "Hello from RabbitMQ!");
   }
 
-  @PreAuthorize("hasAuthority('POST|/user/registry')")
+  @PreAuthorize("hasAuthority('POST|/user/test-authorization')")
   @GetMapping("/test-authorization")
   public CommonResult<String> testAuthorization() {
    return CommonResult.ok("test-authorization ok.");

@@ -1,4 +1,4 @@
-package com.yumenghu.common.log.domain;
+package com.yumenghu.log.domain;
 
 import com.yumenghu.common.constant.GlobalConstants;
 import com.yumenghu.common.util.DateUtil;
