@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: native
+  application:
+    name: ycloud-config
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configs/{profile}
+        # 远程git作为配置文件地址
+        git:
+           uri: https://github.com/yumenghu/ycloud/tree/master/ycloud-config/src/main/resources
+           searchPaths: configs/dev
+           username: 1359040059@qq.com
+           password: yu031009
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://local.register.com:8761/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.int}
+# port
+server:
+  port: 0
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
