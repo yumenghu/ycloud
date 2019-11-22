@@ -2,6 +2,7 @@ package com.yumenghu.common.exception;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.http.HttpStatus;
 
 /**
  *@program: ycloud
@@ -12,29 +13,35 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class YcloudException extends RuntimeException {
 
-  private ErrorCode errorCode;
+  private Integer errorCode;
 
   public YcloudException(ErrorCode errorCode) {
     super(errorCode.getMsg());
-    this.errorCode = errorCode;
+    this.errorCode = errorCode.getCode();
   }
 
   public YcloudException(ErrorCode errorCode, String msg) {
     super(msg);
-    this.errorCode = errorCode;
+    this.errorCode = errorCode.getCode();
   }
 
-  public ErrorCode getErrorCode() {
+
+  public YcloudException(HttpStatus httpStatus, String msg) {
+    super(msg);
+    this.errorCode = httpStatus.value();
+  }
+
+  public Integer getErrorCode() {
     return errorCode;
   }
 
 
   public int getCode() {
-    return errorCode.getCode();
+    return errorCode;
   }
 
   public String getMsg() {
-    return errorCode.getMsg();
+    return this.getMsg();
   }
 
 }

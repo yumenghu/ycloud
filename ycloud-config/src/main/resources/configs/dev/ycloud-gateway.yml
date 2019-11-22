@@ -10,6 +10,7 @@ ribbon:
   ConnectTimeout: 20000
 
 zuul:
+  add-proxy-headers: true
   host:
     connect-timeout-millis: 20000
     socket-timeout-millis: 20000
@@ -32,6 +33,12 @@ zuul:
       stripPrefix: true
       sensitiveHeaders:
       custom-sensitive-headers: true
+    ycloud-monitor:
+      path: /ycloud-monitor/**
+      serviceId: ycloud-monitor
+      stripPrefix: true
+      sensitiveHeaders:
+      custom-sensitive-headers: true
 
 server:
   port: 5000
@@ -47,6 +54,6 @@ management:
       show-details: ALWAYS
 logging:
   level:
-    root: debug
+    root: info
   file: logs/${spring.application.name}.log
 

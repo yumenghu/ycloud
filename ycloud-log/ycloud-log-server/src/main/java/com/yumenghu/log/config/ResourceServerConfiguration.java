@@ -1,9 +1,11 @@
 package com.yumenghu.log.config;
 
+import com.yumenghu.common.service.ElPermissionConfig;
 import com.yumenghu.common.util.PermitAllUrl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -29,6 +31,11 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
   @Value("${ycloud.resource.server.config.isDev:false}")
   private Boolean isDev = false;
 
+  @Bean(name = "el")
+  public ElPermissionConfig elPermissionConfig() {
+    return new ElPermissionConfig();
+  }
+
   @Override
   public void configure(HttpSecurity http) throws Exception {
 
@@ -49,7 +56,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     }
   }
 
-  @Override
+ /* @Override
   public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
     log.info("Configuring ResourceServerSecurityConfigurer ");
     resources.resourceId("foo")
@@ -57,5 +64,5 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
   }
 
   @Autowired
-  TokenStore tokenStore;
+  TokenStore tokenStore;*/
 }

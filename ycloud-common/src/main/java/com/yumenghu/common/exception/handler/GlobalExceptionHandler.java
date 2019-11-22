@@ -31,8 +31,8 @@ public class GlobalExceptionHandler {
   public ResponseEntity handleException(Throwable e) {
     // 打印堆栈信息
     log.error(e.getMessage());
-    CommonResult apiError = CommonResult.error(BAD_REQUEST.value(), e.getMessage());
-    return buildResponseEntity(apiError);
+    CommonResult commonResult = CommonResult.error(BAD_REQUEST.value(), e.getMessage());
+    return buildResponseEntity(commonResult);
   }
 
   /**
@@ -42,8 +42,8 @@ public class GlobalExceptionHandler {
   public ResponseEntity handleAccessDeniedException(AccessDeniedException e) {
     // 打印堆栈信息
     log.error(e.getMessage());
-    CommonResult apiError = CommonResult.error(FORBIDDEN.value(), e.getMessage());
-    return buildResponseEntity(apiError);
+    CommonResult commonResult = CommonResult.error(FORBIDDEN.value(), e.getMessage());
+    return buildResponseEntity(commonResult);
   }
 
   /**

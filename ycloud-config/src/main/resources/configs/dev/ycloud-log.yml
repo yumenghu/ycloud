@@ -16,6 +16,11 @@ mybatis:
   mapper-locations: classpath:/mybatis-mappers/*
   configuration:
     mapUnderscoreToCamelCase: true
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://local.gateway.com:5000/ycloud-uaa/user/user-me
+      prefer-token-info: false
 # port
 server:
   port: 0
@@ -29,6 +34,16 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
 logging:
   level:
     root: info

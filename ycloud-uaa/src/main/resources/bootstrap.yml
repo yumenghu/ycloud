@@ -8,6 +8,12 @@ spring:
         serviceId: ycloud-config
       profile: dev
       fail-fast: true
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://local.gateway.com:8080/api-o/user-me
+      prefer-token-info: false
+      service-id:
 eureka:
   client:
     serviceUrl:

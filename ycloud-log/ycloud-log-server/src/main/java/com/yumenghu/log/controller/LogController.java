@@ -33,7 +33,7 @@ public class LogController {
    * @param sysLogDTO
    * @return
    */
-  @PreAuthorize("hasAuthority('POST|/log')")
+  @PreAuthorize("@el.check()")
   @PostMapping
   @SysLogger("日志查询")
   public Page<SysLog> findLogs(@Valid @NotNull SysLogDTO sysLogDTO) {

@@ -1,11 +1,22 @@
 spring:
+  redis:
+    host: ycloud.redis.com
+    port: 6379
+    password: 123456
+    timeout: 10s
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://ycloud.mysql.com:3306/ycloud_user?useSSL=false&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=GMT%2B8
     username: root
     password: 123456
   rabbitmq:
-    host: ycloud.rabbitmq.com
+    host: local.rabbitmq.com
     port: 5672
     username: guest
     password: guest
@@ -29,8 +40,18 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
 logging:
   level:
-    root: debug
+    root: info
     com.yumenghu: debug
   file: logs/${spring.application.name}.log

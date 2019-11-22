@@ -30,8 +30,9 @@
       <artifactId>spring-cloud-starter-config</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-openfeign</artifactId>
+      <groupId>com.yumenghu</groupId>
+      <artifactId>ycloud-common</artifactId>
+      <version>${parent.version}</version>
     </dependency>
   </dependencies>
 

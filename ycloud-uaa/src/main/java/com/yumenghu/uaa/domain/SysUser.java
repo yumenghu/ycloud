@@ -1,6 +1,7 @@
 package com.yumenghu.uaa.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -13,8 +14,9 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors(chain = true)
-public class SysUser {
+public class SysUser implements Serializable {
 
+  private static final long serialVersionUID = -8432944720359404438L;
   /**
    * 主键ID
    */
